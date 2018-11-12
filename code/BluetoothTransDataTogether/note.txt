@@ -1,0 +1,4 @@
+http://arduino.vn/bai-viet/275-giao-tiep-giua-hai-mach-arduino-bat-ky
+http://arduino.vn/bai-viet/929-giao-tiep-2-board-arduino-bang-module-bluetooth
+http://arduino.vn/bai-viet/912-dung-may-tinh-dieu-khien-arduino-thong-qua-bluetooth-voi-c-mot-cai-nhin-toan-dien-ve
+http://arduino.vn/bai-viet/902-c-sharp-c-mot-cach-dieu-khien-arduino-bang-may-tinh
