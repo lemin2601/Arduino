@@ -1,0 +1,74 @@
+AT
+AT+CWJAP="Vinh Quang","0914300587"
+AT+CIFSR
+AT+CIPSTART="TCP","arduino.esp8266.com",80
+AT+CIPSEND=112
+GET /versions/2.3.0/package_esp8266com_index.json HTTP/1.1\r\n Host: www.google.com\r\n\r\nConnection: close\r\n
+
+AT+CIPSEND=91
+GET /versions/2.3.0/package_esp8266com_index.json HTTP/1.1\r\n Host: www.google.com\r\n\r\n
+
+
+AT
+AT+CWJAP="NOKIA","cntt2017"
+AT+CIFSR
+AT+CIPSTART="TCP","webservices.iotdanang.xyz",80
+AT+CIPSEND=153
+
+GET /?updateinfo&keyequipment=73cc77f9c288694c0a959d5a5818b861&apikey=24c9e15e52afc47c225b757e7bee1f9d&state_one=3&state_two=4&state_three=6&format=xml HTTP/1.1\r\n Host: www.google.com\r\n\r\n
+GET /index.php?getinfo&keyequipment=73cc77f9c288694c0a959d5a5818b861&apikey=24c9e15e52afc47c225b757e7bee1f9d&format=json HTTP/1.1\r\n Host: webservices.iotdanang.xyz\r\n\r\n
+AT+CIPSTART="TCP","webservices.iotdanang.xyz",80
+AT+CIPSEND=65
+GET /index.php HTTP/1.1\r\nHost: webservices.iotdanang.xyz\r\n\r\n
+
+
+AT+CIPSEND=91
+GET /versions/2.3.0/package_esp8266com_index.json HTTP/1.1\r\n Host: www.google.com\r\n\r\n
+
+AT+CIPSTART="TCP","www.google.com",80
+AT+CIPSEND=98
+GET /search?client=opera&q=abc&sourceid=opera&ie=UTF-8&oe=UTF-8 HTTP/1.0\r\nHost: www.google.com\r\n\r\n
+
+AT+CIPCLOSE
+
+// cái này test thử
+AT+CIPSTART="TCP","swemod.com",80
+AT+CIPSTART="TCP","www.google.com",80
+AT+CIPSEND=46
+GET http://www.swemod.com/esp.php?value1=1
+
+
+// cái này ok post
+AT+CIPSTART="TCP","webservices.iotdanang.xyz",80
+AT+CIPSEND=149
+GET http://webservices.iotdanang.xyz/?getinfo&keyequipment=73cc77f9c288694c0a959d5a5818b861&apikey=24c9e15e52afc47c225b757e7bee1f9d&format=json
+
+AT+CIPSEND=163
+GET /index.php?getinfo&keyequipment=73cc77f9c288694c0a959d5a5818b861&apikey=24c9e15e52afc47c225b757e7bee1f9d&format=json
+HTTP/1.1
+Accept: */*
+Content-Length: 53
+Content-Type: application/x-www-form-urlencoded\
+Host: webservices.iotdanang.xyz
+AT+CIPCLOSE
+// post
+
+AT+CIPSEND=56
+GET http://webservices.iotdanang.xyz/postprocess.php
+AT+CIPSTART="TCP","webservices.iotdanang.xyz",80
+AT+CIPSEND=70
+GET /postprocess.php HTTP/1.1
+Host: webservices.iotdanang.xyz
+
+
+AT+CIPSEND=202
+POST /postprocess.php HTTP/1.1
+Host: webservices.iotdanang.xyz
+User-Agent: Arduino/1.0
+Accept: */*
+Content-Length: 53
+Content-Type: application/x-www-form-urlencoded
+key_equipment=1&state_one=1&state_two=5&state_three=2
+AT+CIPSEND=113
+POST http://webservices.iotdanang.xyz/postprocess.php?key_equipment=1&state_one=1&state_two=5&state_three=2
+
